@@ -16,7 +16,7 @@ from param.parameterized import overridable_property
 from .boundingregion import BoundingBox
 from .patterngenerator import PatternGenerator
 from .sheetcoords import SheetCoordinateSystem
-from .transferfn import DivisiveNormalizeLinf,TransferFn
+from .transferfn import DivisiveNormalizeLinf, TransferFn
 
 
 class ImageSampler(param.Parameterized):

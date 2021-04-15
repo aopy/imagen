@@ -33,7 +33,7 @@ from .patternfn import gaussian,exponential,gabor,line,disk,ring,\
     log_gaussian
 #from random import UniformRandom
 #import numbergen
-from imagen.transferfn import DivisiveNormalizeL1
+from .transferfn import DivisiveNormalizeL1
 
 
 # Could add a Gradient class, where the brightness varies as a
@@ -1496,7 +1496,13 @@ class Spectrogram(PowerSpectrum):
 
 
 _public = list(set([_k for _k,_v in locals().items() if isinstance(_v,type) and issubclass(_v,PatternGenerator)]))
-#del _k,_v
+
+try:
+    del _k, _v
+except NameError:
+    pass
+
+
 __all__ = _public + ["image","random"]
 
 # Avoids loading the audio and opencvcamera modules, which rely on external
